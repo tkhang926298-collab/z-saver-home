@@ -2,30 +2,231 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Z-Saver PC - Công cụ quản lý Zalo tối thượng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Saver PC | Giải Pháp Tối Ưu Zalo Toàn Diện</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        body { background-color: #2B2B2B; color: #FFFFFF; font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        .btn { background-color: #0068FF; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-size: 20px; font-weight: bold; }
-        .btn:hover { background-color: #0055CC; }
-        .features { text-align: left; max-width: 600px; margin: 30px auto; background: #333; padding: 20px; border-radius: 10px; }
+        :root {
+            --primary-color: #0068FF; /* Zalo Blue */
+            --primary-hover: #0054cc;
+            --accent-color: #00C6FF;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --glow: 0 0 20px rgba(0, 104, 255, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Hero Section --- */
+        .hero {
+            position: relative;
+            padding: 80px 20px 120px;
+            text-align: center;
+            background: radial-gradient(circle at top center, #1e293b 0%, #0f172a 70%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #0068FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: var(--glow);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-download:hover {
+            background: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 104, 255, 0.7);
+        }
+
+        .btn-download i { margin-right: 10px; }
+
+        /* --- Features Grid --- */
+        .container {
+            max-width: 1200px;
+            margin: -80px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 104, 255, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* --- Detailed Sections --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 80px 0 20px;
+        }
+        
+        .sub-title {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 60px;
+        }
+
+        .highlight { color: var(--primary-color); }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 80px;
+            color: var(--text-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .container { margin-top: -40px; }
+        }
     </style>
 </head>
 <body>
-    <h1>Z-Saver PC</h1>
-    <p>Giải phóng dung lượng ổ C - Backup tin nhắn an toàn - Marketing tự động</p>
-    
-    <div class="features">
-        <h3>Tính năng nổi bật:</h3>
-        <ul>
-            <li>✅ Chuyển dữ liệu Zalo sang ổ D an toàn 100%.</li>
-            <li>✅ Gửi tin nhắn hàng loạt từ Excel.</li>
-            <li>✅ Backup tin nhắn hiển thị (Visual Backup).</li>
-            <li>✅ Quản lý nhiều tài khoản (Multi-login).</li>
-        </ul>
+
+    <section class="hero">
+        <h1>Z-Saver PC <br>Đỉnh Cao Quản Lý Zalo</h1>
+        <p>Công cụ "All-in-One" giúp bạn giải phóng ổ cứng, bảo vệ dữ liệu và tự động hóa công việc kinh doanh trên Zalo PC.</p>
+        
+        <a href="LINK_ONEDRIVE_CUA_BAN" class="btn-download">
+            <i class="fa-solid fa-download"></i> Tải Về Ngay (Miễn Phí)
+        </a>
+        <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">Phiên bản mới nhất: 1.0.1 | Tương thích Windows 10/11</p>
+    </section>
+
+    <div class="container">
+        <div class="features-grid">
+            <div class="card">
+                <div class="icon-box"><i class="fa-solid fa-hard-drive"></i></div>
+                <h3>Giải Phóng Ổ C</h3>
+                <p>Ổ C bị đỏ vì Zalo? Z-Saver giúp bạn chuyển toàn bộ dữ liệu sang ổ D/E chỉ với 1 cú click chuột mà không làm mất tin nhắn. An toàn tuyệt đối 100%.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon-box"><i class="fa-solid fa-rocket"></i></div>
+                <h3>Tăng Tốc Mượt Mà</h3>
+                <p>Tự động quét và dọn dẹp hàng Gigabyte file rác, file cache tạm thời. Giúp Zalo khởi động nhanh như gió, không còn tình trạng giật lag.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Backup & Bảo Mật</h3>
+                <p>Sao lưu tin nhắn quan trọng ra file HTML/Word để đọc lại bất cứ lúc nào. Không bao giờ lo mất dữ liệu khách hàng hay kỷ niệm cũ.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Vũ Khí Cho <span class="highlight">Dân Kinh Doanh</span></h2>
+        <p class="sub-title">Nâng cấp lên bản PRO để sở hữu bộ công cụ Marketing mạnh mẽ</p>
+
+        <div class="features-grid">
+            <div class="card" style="border-color: rgba(255, 215, 0, 0.3);">
+                <div class="icon-box" style="color: #ffd700; background: rgba(255, 215, 0, 0.1);"><i class="fa-solid fa-paper-plane"></i></div>
+                <h3 style="color: #ffd700;">Gửi Tin Hàng Loạt</h3>
+                <p>Nhập danh sách từ Excel và gửi tin nhắn tự động chăm sóc khách hàng. Hỗ trợ gửi kèm ảnh, file và cá nhân hóa tên người nhận.</p>
+            </div>
+
+            <div class="card" style="border-color: rgba(255, 215, 0, 0.3);">
+                <div class="icon-box" style="color: #ffd700; background: rgba(255, 215, 0, 0.1);"><i class="fa-solid fa-users-viewfinder"></i></div>
+                <h3 style="color: #ffd700;">CRM Overlay</h3>
+                <p>Ghi chú thông tin khách hàng ngay trên khung chat (VIP, Khách nợ, Khách mới...). Không cần nhớ, chỉ cần nhìn là biết khách là ai.</p>
+            </div>
+
+            <div class="card" style="border-color: rgba(255, 215, 0, 0.3);">
+                <div class="icon-box" style="color: #ffd700; background: rgba(255, 215, 0, 0.1);"><i class="fa-solid fa-layer-group"></i></div>
+                <h3 style="color: #ffd700;">Multi Login</h3>
+                <p>Đăng nhập song song nhiều tài khoản Zalo trên cùng một máy tính. Quản lý 5-10 shop bán hàng cùng lúc cực kỳ tiện lợi.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 80px;">
+            <a href="LINK_ONEDRIVE_CUA_BAN" class="btn-download" style="padding: 15px 50px;">
+                <i class="fa-brands fa-windows"></i> Tải Z-Saver PC Ngay
+            </a>
+        </div>
     </div>
 
-    <a href="LINK_ONEDRIVE_CUA_BAN" class="btn">Tải Ngay (Phiên bản Mới Nhất)</a>
-    
-    <p style="margin-top: 20px; color: #888;">Phiên bản hiện tại: 1.0.0</p>
+    <footer>
+        <p>&copy; 2024 Z-Saver Team. Developed by TuanSec.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Phần mềm được thiết kế để hỗ trợ người dùng Zalo PC, không can thiệp trái phép vào hệ thống.</p>
+    </footer>
+
 </body>
 </html>
