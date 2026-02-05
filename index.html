@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z-Saver PC | Giải Pháp Tối Ưu Zalo Toàn Diện</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Z-Saver PC | Giải Pháp Tối Ưu & Marketing Zalo Toàn Diện</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* --- CẤU HÌNH MÀU SẮC & BIẾN --- */
         :root {
-            --primary-color: #0068FF; /* Zalo Blue */
+            --primary-color: #0068FF; /* Xanh Zalo */
             --primary-hover: #0054cc;
-            --accent-color: #00C6FF;
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
+            --gold-color: #ffd700;    /* Màu Vàng cho bản Pro */
+            --bg-dark: #0f172a;       /* Nền tối chủ đạo */
+            --bg-card: #1e293b;       /* Nền thẻ */
             --text-light: #f8fafc;
             --text-gray: #94a3b8;
             --glow: 0 0 20px rgba(0, 104, 255, 0.5);
+            --glow-gold: 0 0 20px rgba(255, 215, 0, 0.3);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,60 +29,63 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Tránh thanh cuộn ngang */
         }
 
-        /* --- Header & Hero Section --- */
+        /* --- PHẦN HERO (ĐẦU TRANG) --- */
         .hero {
             position: relative;
-            padding: 80px 20px 120px;
+            padding: 100px 20px 140px;
             text-align: center;
             background: radial-gradient(circle at top center, #1e293b 0%, #0f172a 70%);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 20px;
-            background: linear-gradient(to right, #fff, #0068FF);
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff 20%, #0068FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: fadeIn Up 1s ease-out;
+            animation: slideUp 0.8s ease-out;
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-gray);
             max-width: 700px;
             margin: 0 auto 40px;
+            animation: slideUp 1s ease-out;
         }
 
+        /* Nút tải về */
         .btn-download {
             display: inline-block;
             background: var(--primary-color);
             color: white;
-            padding: 18px 40px;
+            padding: 18px 45px;
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             box-shadow: var(--glow);
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            animation: pulse 2s infinite;
         }
 
         .btn-download:hover {
             background: var(--primary-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(0, 104, 255, 0.7);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 104, 255, 0.6);
         }
 
-        .btn-download i { margin-right: 10px; }
-
-        /* --- Features Grid --- */
+        /* --- PHẦN TÍNH NĂNG (GRID SYSTEM) --- */
         .container {
             max-width: 1200px;
-            margin: -80px auto 0;
+            margin: -80px auto 0; /* Đẩy lên đè vào Hero */
             padding: 0 20px;
             position: relative;
             z-index: 10;
@@ -87,9 +93,9 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .card {
@@ -97,79 +103,173 @@
             padding: 40px 30px;
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.3s, border-color 0.3s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
             transform: translateY(-10px);
             border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .icon-box {
             width: 60px;
             height: 60px;
             background: rgba(0, 104, 255, 0.1);
-            border-radius: 15px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: white;
-        }
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: white; }
+        .card p { color: var(--text-gray); font-size: 0.95rem; }
 
-        .card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        /* --- Detailed Sections --- */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin: 80px 0 20px;
-        }
+        /* Style riêng cho phần Pro/Marketing */
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .highlight { color: var(--gold-color); }
         
-        .sub-title {
-            text-align: center;
-            color: var(--text-gray);
-            margin-bottom: 60px;
+        .card.pro { border-color: rgba(255, 215, 0, 0.2); }
+        .card.pro:hover { border-color: var(--gold-color); box-shadow: var(--glow-gold); }
+        .card.pro .icon-box { background: rgba(255, 215, 0, 0.1); color: var(--gold-color); }
+        .card.pro h3 { color: var(--gold-color); }
+
+        /* Nút "Xem chi tiết" trong thẻ Card */
+        .btn-detail {
+            margin-top: 20px;
+            background: transparent;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: var(--gold-color);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-detail:hover {
+            background: rgba(255, 215, 0, 0.1);
+            padding-right: 25px;
+            border-color: var(--gold-color);
         }
 
-        .highlight { color: var(--primary-color); }
-
-        /* --- Footer --- */
+        /* --- FOOTER --- */
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 50px 20px;
             border-top: 1px solid rgba(255,255,255,0.05);
-            margin-top: 80px;
             color: var(--text-gray);
+            background: #0b1120;
+            margin-top: 50px;
+        }
+
+        /* --- MODAL POPUP (CỬA SỔ BẬT LÊN) --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal.show { opacity: 1; }
+
+        .modal-content {
+            background: #1e293b;
+            border: 1px solid var(--gold-color);
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.15);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal.show .modal-content { transform: scale(1); }
+
+        .modal-header {
+            background: linear-gradient(90deg, #1e293b 0%, #3a3100 100%);
+            padding: 20px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky; top: 0; z-index: 5;
+        }
+
+        .close-btn {
+            color: #aaa; font-size: 28px; cursor: pointer;
+            background: none; border: none; transition: color 0.2s;
+        }
+        .close-btn:hover { color: #fff; }
+
+        .modal-body { padding: 30px; }
+        .modal-body h4 { 
+            color: var(--gold-color); 
+            font-size: 1.3rem; margin: 25px 0 15px; 
+            border-left: 4px solid var(--gold-color); 
+            padding-left: 15px; 
+        }
+        
+        /* Style nội dung trong Modal */
+        .highlight-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
+        }
+        .highlight-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px; border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .check-list { list-style: none; }
+        .check-list li { margin-bottom: 12px; position: relative; padding-left: 30px; }
+        .check-list li::before { 
+            content: '✓'; color: #00ff00; 
+            position: absolute; left: 0; font-weight: bold; font-size: 1.1rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .container { margin-top: -40px; }
+            .highlight-grid { grid-template-columns: 1fr; }
+            .container { margin-top: -30px; }
         }
+
+        /* Animation */
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(0, 104, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); } }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1>Z-Saver PC <br>Đỉnh Cao Quản Lý Zalo</h1>
-        <p>Công cụ "All-in-One" giúp bạn giải phóng ổ cứng, bảo vệ dữ liệu và tự động hóa công việc kinh doanh trên Zalo PC.</p>
+        <h1>Z-Saver PC <br>Đỉnh Cao Quản Lý & Marketing</h1>
+        <p>Phần mềm "All-in-One": Giải phóng ổ cứng, Bảo mật dữ liệu và Tự động hóa chăm sóc khách hàng trên Zalo PC.</p>
         
         <a href="LINK_ONEDRIVE_CUA_BAN" class="btn-download">
-            <i class="fa-solid fa-download"></i> Tải Về Ngay (Miễn Phí)
+            <i class="fa-brands fa-windows"></i> Tải Về Miễn Phí
         </a>
-        <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">Phiên bản mới nhất: 1.0.1 | Tương thích Windows 10/11</p>
+        <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.6;">
+            <i class="fa-solid fa-check-circle" style="color: #00ff00;"></i> An toàn 100% | Phiên bản mới nhất: 1.0.1
+        </p>
     </section>
 
     <div class="container">
@@ -177,56 +277,166 @@
             <div class="card">
                 <div class="icon-box"><i class="fa-solid fa-hard-drive"></i></div>
                 <h3>Giải Phóng Ổ C</h3>
-                <p>Ổ C bị đỏ vì Zalo? Z-Saver giúp bạn chuyển toàn bộ dữ liệu sang ổ D/E chỉ với 1 cú click chuột mà không làm mất tin nhắn. An toàn tuyệt đối 100%.</p>
+                <p>Chuyển toàn bộ dữ liệu Zalo sang ổ D/E chỉ với 1 cú click. Giữ nguyên tin nhắn, giải phóng hàng chục GB cho ổ C.</p>
             </div>
-
             <div class="card">
                 <div class="icon-box"><i class="fa-solid fa-rocket"></i></div>
-                <h3>Tăng Tốc Mượt Mà</h3>
-                <p>Tự động quét và dọn dẹp hàng Gigabyte file rác, file cache tạm thời. Giúp Zalo khởi động nhanh như gió, không còn tình trạng giật lag.</p>
+                <h3>Tăng Tốc Máy Tính</h3>
+                <p>Tự động quét và dọn dẹp file rác, file tạm (Cache) sinh ra trong quá trình sử dụng. Giúp Zalo mượt mà, không giật lag.</p>
             </div>
-
             <div class="card">
                 <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>Backup & Bảo Mật</h3>
-                <p>Sao lưu tin nhắn quan trọng ra file HTML/Word để đọc lại bất cứ lúc nào. Không bao giờ lo mất dữ liệu khách hàng hay kỷ niệm cũ.</p>
+                <h3>Backup An Toàn</h3>
+                <p>Sao lưu tin nhắn ra file HTML/Word để lưu trữ hoặc in ấn. Đảm bảo dữ liệu khách hàng không bao giờ bị mất.</p>
             </div>
         </div>
 
-        <h2 class="section-title">Vũ Khí Cho <span class="highlight">Dân Kinh Doanh</span></h2>
-        <p class="sub-title">Nâng cấp lên bản PRO để sở hữu bộ công cụ Marketing mạnh mẽ</p>
+        <div class="section-header">
+            <h2>Vũ Khí Cho <span class="highlight">Dân Kinh Doanh</span></h2>
+            <p style="color: var(--text-gray);">Bộ công cụ giúp bạn bán hàng và chăm sóc khách hàng tự động</p>
+        </div>
 
         <div class="features-grid">
-            <div class="card" style="border-color: rgba(255, 215, 0, 0.3);">
-                <div class="icon-box" style="color: #ffd700; background: rgba(255, 215, 0, 0.1);"><i class="fa-solid fa-paper-plane"></i></div>
-                <h3 style="color: #ffd700;">Gửi Tin Hàng Loạt</h3>
-                <p>Nhập danh sách từ Excel và gửi tin nhắn tự động chăm sóc khách hàng. Hỗ trợ gửi kèm ảnh, file và cá nhân hóa tên người nhận.</p>
+            <div class="card pro">
+                <div class="icon-box"><i class="fa-solid fa-paper-plane"></i></div>
+                <h3>Gửi Tin Hàng Loạt</h3>
+                <p>Hệ thống gửi tin tự động thông minh, hỗ trợ gửi kèm ảnh/file và cá nhân hóa tên khách hàng.</p>
+                <button onclick="openModal('modalBulk')" class="btn-detail">
+                    Xem cơ chế hoạt động <i class="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
 
-            <div class="card" style="border-color: rgba(255, 215, 0, 0.3);">
-                <div class="icon-box" style="color: #ffd700; background: rgba(255, 215, 0, 0.1);"><i class="fa-solid fa-users-viewfinder"></i></div>
-                <h3 style="color: #ffd700;">CRM Overlay</h3>
-                <p>Ghi chú thông tin khách hàng ngay trên khung chat (VIP, Khách nợ, Khách mới...). Không cần nhớ, chỉ cần nhìn là biết khách là ai.</p>
+            <div class="card pro">
+                <div class="icon-box"><i class="fa-solid fa-users-viewfinder"></i></div>
+                <h3>CRM Overlay (Ghi Chú)</h3>
+                <p>Hiển thị ghi chú khách hàng (VIP, Khách nợ...) ngay trên khung chat. Giúp nhân viên tư vấn chính xác từng người.</p>
             </div>
 
-            <div class="card" style="border-color: rgba(255, 215, 0, 0.3);">
-                <div class="icon-box" style="color: #ffd700; background: rgba(255, 215, 0, 0.1);"><i class="fa-solid fa-layer-group"></i></div>
-                <h3 style="color: #ffd700;">Multi Login</h3>
-                <p>Đăng nhập song song nhiều tài khoản Zalo trên cùng một máy tính. Quản lý 5-10 shop bán hàng cùng lúc cực kỳ tiện lợi.</p>
+            <div class="card pro">
+                <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                <h3>Đa Tài Khoản (Multi)</h3>
+                <p>Đăng nhập song song 5-10 tài khoản Zalo trên cùng một máy tính. Quản lý nhiều Shop cực kỳ tiện lợi.</p>
             </div>
         </div>
 
-        <div style="text-align: center; margin-bottom: 80px;">
-            <a href="LINK_ONEDRIVE_CUA_BAN" class="btn-download" style="padding: 15px 50px;">
-                <i class="fa-brands fa-windows"></i> Tải Z-Saver PC Ngay
+        <div style="text-align: center; margin-bottom: 60px;">
+            <a href="LINK_ONEDRIVE_CUA_BAN" class="btn-download" style="padding: 15px 60px; background: transparent; border: 1px solid var(--primary-color); box-shadow: none;">
+                Tải Ngay & Trải Nghiệm
             </a>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Z-Saver Team. Developed by TuanSec.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">Phần mềm được thiết kế để hỗ trợ người dùng Zalo PC, không can thiệp trái phép vào hệ thống.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">
+            Phần mềm hỗ trợ người dùng Zalo PC, tuân thủ chính sách bảo mật dữ liệu.
+        </p>
     </footer>
+
+    <div id="modalBulk" class="modal" onclick="handleOutsideClick(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 style="color: var(--gold-color); display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-robot"></i> Công Nghệ Auto Sender
+                </h2>
+                <button class="close-btn" onclick="closeModal('modalBulk')">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7;">
+                    Quên đi cảnh copy-paste mỏi tay. <b>Z-Saver Auto Sender</b> biến máy tính của bạn thành một nhân viên telesale chăm chỉ, giúp bạn gửi thông báo đến hàng nghìn khách hàng chỉ với 1 click.
+                </p>
+
+                <h4>1. Tính năng này dành cho ai?</h4>
+                <div class="highlight-grid">
+                    <div class="highlight-item">
+                        <strong style="color: #fff;">👨‍💼 Bất Động Sản / Ô tô</strong>
+                        <p style="font-size: 0.9rem; margin-top: 5px; color: #ccc;">Gửi bảng hàng, sơ đồ dự án mới kèm ảnh cho tệp khách cũ.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <strong style="color: #fff;">🛒 Chủ Shop Online</strong>
+                        <p style="font-size: 0.9rem; margin-top: 5px; color: #ccc;">Gửi mã giảm giá, thông báo hàng về, chúc mừng sinh nhật.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <strong style="color: #fff;">👩‍💻 HR / Tuyển Dụng</strong>
+                        <p style="font-size: 0.9rem; margin-top: 5px; color: #ccc;">Gửi JD mô tả công việc hàng loạt cho ứng viên.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <strong style="color: #fff;">🏢 Kế Toán / Admin</strong>
+                        <p style="font-size: 0.9rem; margin-top: 5px; color: #ccc;">Gửi phiếu lương, thông báo lịch nghỉ lễ nội bộ.</p>
+                    </div>
+                </div>
+
+                <h4>2. Tại sao chọn Z-Saver (Điểm Khác Biệt)?</h4>
+                <ul class="check-list">
+                    <li>
+                        <strong style="color: #fff;">Cá Nhân Hóa 1-1:</strong> 
+                        Tin nhắn sẽ tự động đổi tên: "Chào anh <b>Tuấn</b>", "Chào chị <b>Lan</b>"... giúp tăng tỷ lệ phản hồi lên 200%.
+                    </li>
+                    <li>
+                        <strong style="color: #fff;">🛡️ Cơ Chế Anti-Ban (Chống Khóa):</strong> 
+                        Phần mềm sử dụng thuật toán <i>"Human Simulation"</i> (Giả lập hành vi người thật). Tự động nghỉ ngẫu nhiên giữa các tin nhắn (ví dụ: gửi 5 tin -> nghỉ 10 giây -> gửi tiếp). Zalo sẽ hiểu đây là người thật đang thao tác.
+                    </li>
+                    <li>
+                        <strong style="color: #fff;">Đa Phương Tiện:</strong> 
+                        Hỗ trợ gửi kèm File (PDF, Excel) và Ảnh (JPG, PNG) trong cùng một lần gửi.
+                    </li>
+                </ul>
+
+                <h4>3. Quy trình 3 bước đơn giản</h4>
+                <ol style="margin-left: 20px; color: #ccc;">
+                    <li style="margin-bottom: 8px;"><b>Bước 1:</b> Tải file Excel mẫu từ phần mềm và điền danh sách khách hàng.</li>
+                    <li style="margin-bottom: 8px;"><b>Bước 2:</b> Load file vào Z-Saver, soạn nội dung tin nhắn.</li>
+                    <li style="margin-bottom: 8px;"><b>Bước 3:</b> Bấm <b>Start</b> và đi uống cà phê. Máy sẽ tự làm việc.</li>
+                </ol>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="LINK_ONEDRIVE_CUA_BAN" class="btn-download" style="font-size: 1rem; padding: 12px 40px; background: var(--gold-color); color: #000; box-shadow: var(--glow-gold);">
+                        <i class="fa-solid fa-download"></i> Tải Về Dùng Thử Ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hàm mở Modal
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = 'flex';
+            // Thêm delay nhỏ để kích hoạt transition opacity
+            setTimeout(() => { modal.classList.add('show'); }, 10);
+            document.body.style.overflow = 'hidden'; // Khóa cuộn trang chính
+        }
+
+        // Hàm đóng Modal
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('show');
+            // Đợi animation chạy xong mới ẩn display
+            setTimeout(() => { 
+                modal.style.display = 'none'; 
+                document.body.style.overflow = 'auto'; // Mở lại cuộn
+            }, 300);
+        }
+
+        // Đóng khi click ra ngoài vùng content
+        function handleOutsideClick(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target.id);
+            }
+        }
+
+        // Đóng khi ấn phím ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'flex') closeModal(modal.id);
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
