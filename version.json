@@ -1,5 +1,11 @@
 {
-    "latest_version": "1.0.0",
-    "download_url": "LINK_DIRECT_ONEDRIVE_CUA_BAN",
-    "release_notes": "Ban phathanh dau tien."
+    "latest_version": "1.0.1",
+    "download_url": "LINK_ONEDRIVE_DA_SUA_THANH_DOWNLOAD",
+    "force_update": false,
+    "release_notes": "Bản cập nhật vá lỗi và cải thiện tốc độ.",
+    "uia_config": {
+        "zalo_window_name": "Zalo",
+        "chat_container_class": "ChatContainerClass",
+        "edit_class": "Edit"
+    }
 }
