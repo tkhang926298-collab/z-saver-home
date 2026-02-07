@@ -1,11 +1,14 @@
 {
-    "latest_version": "1.0.1",
-    "download_url": "LINK_ONEDRIVE_DA_SUA_THANH_DOWNLOAD",
-    "force_update": false,
-    "release_notes": "Bản cập nhật vá lỗi và cải thiện tốc độ.",
-    "uia_config": {
-        "zalo_window_name": "Zalo",
-        "chat_container_class": "ChatContainerClass",
-        "edit_class": "Edit"
-    }
+  "latest_version": "1.0.1",
+  "download_url": "https://onedrive.live.com/download?cid=...",
+  "release_notes": "Cập nhật tính năng chống thu hồi tin nhắn và vá lỗi treo app.",
+  "force_update": false,
+  "valid_hashes": {
+    "1.0.0": "d2e3f4g5h6... (Mã hash của bản cũ)",
+    "1.0.1": "a1b2c3d4e5... (Mã hash của bản mới nhất vừa build)"
+  },
+  "uia_config": {
+    "zalo_window_name": "Zalo",
+    "chat_container_class": "ChatContainerClass"
+  }
 }
