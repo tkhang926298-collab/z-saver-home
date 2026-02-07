@@ -4,7 +4,6 @@
   "release_notes": "Cập nhật tính năng chống thu hồi tin nhắn và vá lỗi treo app.",
   "force_update": false,
   "valid_hashes": {
-    "1.0.0": "d2e3f4g5h6... (Mã hash của bản cũ)",
     "1.0.1": "2ac335f3fafa782c6184ba8a19bc78343fd094163fdd8340869ba4248089b82f"
   },
   "uia_config": {
